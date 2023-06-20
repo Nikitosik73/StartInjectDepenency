@@ -1,4 +1,6 @@
 package ru.paramonov.startinjectdepenency.example1
 
-class Keyboard {
+import javax.inject.Inject
+
+class Keyboard @Inject constructor() {
 }

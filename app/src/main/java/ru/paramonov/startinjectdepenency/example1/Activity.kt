@@ -1,14 +1,19 @@
 package ru.paramonov.startinjectdepenency.example1
 
+import javax.inject.Inject
+
 class Activity {
 
-    // первый способ доставки зависимотей через поля класса
-//    val computer = Component().getComputer()
-    // второй способ доставки зависмотей через поля класса
-    lateinit var computer: Computer
+    val component = DaggerNewComponent.create()
+
+    @Inject
     lateinit var keyboard: Keyboard
+    @Inject
+    lateinit var mouse: Mouse
+    @Inject
+    lateinit var monitor: Monitor
 
     init {
-        Component().inject(this)
+        component.inject(this)
     }
 }
