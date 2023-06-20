@@ -1,7 +1,5 @@
 package ru.paramonov.startinjectdepenency.example1
 
-import com.example.dependencyinjectionstart.example1.Memory
-
 class Component {
 
     private fun getComputer(): Computer {
