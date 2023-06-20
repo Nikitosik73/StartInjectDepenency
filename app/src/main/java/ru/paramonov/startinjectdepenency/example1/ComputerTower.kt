@@ -1,6 +1,6 @@
 package ru.paramonov.startinjectdepenency.example1
 
-import com.example.dependencyinjectionstart.example1.Memory
+import javax.inject.Inject
 
 class ComputerTower(
     val storage: Storage,
