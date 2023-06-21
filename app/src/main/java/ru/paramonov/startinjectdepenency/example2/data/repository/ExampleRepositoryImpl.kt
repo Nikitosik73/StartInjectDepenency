@@ -4,8 +4,9 @@ import ru.paramonov.startinjectdepenency.example2.data.datasource.ExampleLocalDa
 import ru.paramonov.startinjectdepenency.example2.data.datasource.ExampleRemoteDataSource
 import ru.paramonov.startinjectdepenency.example2.data.mapper.ExampleMapper
 import ru.paramonov.startinjectdepenency.example2.domain.ExampleRepository
+import javax.inject.Inject
 
-class ExampleRepositoryImpl(
+class ExampleRepositoryImpl @Inject constructor(
     private val mapper: ExampleMapper,
     private val localDataSource: ExampleLocalDataSource,
     private val remoteDataSource: ExampleRemoteDataSource
