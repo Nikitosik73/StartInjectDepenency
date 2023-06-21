@@ -3,7 +3,7 @@ package ru.paramonov.startinjectdepenency.example2.presentation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ru.paramonov.startinjectdepenency.R
-import ru.paramonov.startinjectdepenency.example2.di.DaggerApplicationComponent
+import ru.paramonov.startinjectdepenency.example2.ExampleApp
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -12,10 +12,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var viewModel: ExampleViewModel
 
     private val component by lazy {
-        DaggerApplicationComponent.builder()
-            .context(application)
-            .time(System.currentTimeMillis())
-            .build()
+        (application as ExampleApp).component
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -4,20 +4,20 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import ru.paramonov.startinjectdepenency.example2.presentation.MainActivity
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
 
-    @Component.Builder
-    interface ApplicationComponentBuilder {
+    @Component.Factory
+    interface ApplicationComponentFactory {
 
-        @BindsInstance
-        fun context(context: Context): ApplicationComponentBuilder
-        @BindsInstance
-        fun time(currentTime: Long): ApplicationComponentBuilder
-
-        fun build(): ApplicationComponent
+        fun create(
+            @BindsInstance context: Context,
+            @BindsInstance currentTime: Long
+        ): ApplicationComponent
     }
 }
