@@ -6,11 +6,12 @@ import ru.paramonov.startinjectdepenency.R
 import javax.inject.Inject
 
 class ExampleApiService @Inject constructor(
-    private val context: Context
+    private val context: Context,
+    private val currentTime: Long
 ){
 
     fun method() {
-        Log.d(LOG_TAG, "ExampleApiService ${context.getString(R.string.app_name)}")
+        Log.d(LOG_TAG, "ExampleApiService ${context.getString(R.string.app_name)} $currentTime")
     }
 
     companion object {
