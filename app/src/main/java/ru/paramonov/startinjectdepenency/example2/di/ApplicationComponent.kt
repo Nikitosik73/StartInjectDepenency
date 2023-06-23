@@ -11,9 +11,7 @@ import javax.inject.Singleton
 @Component(modules = [DataModule::class, DomainModule::class, ViewModelModule::class])
 interface ApplicationComponent {
 
-    fun inject(activity: MainActivity)
-
-    fun inject(activity: MainActivity2)
+    fun activityComponentFactory(): ActivityComponent.ActivityFactory
 
     @Component.Factory
     interface ApplicationComponentFactory {
