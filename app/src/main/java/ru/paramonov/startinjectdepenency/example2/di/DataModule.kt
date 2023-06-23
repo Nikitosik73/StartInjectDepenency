@@ -11,11 +11,13 @@ import ru.paramonov.startinjectdepenency.example2.data.datasource.ExampleRemoteD
 @Module
 interface DataModule {
 
+    @ApplicationScope
     @Binds
     fun bindLocalDataSource(
         imp: ExampleLocalDataSourceImpl
     ): ExampleLocalDataSource
 
+    @ApplicationScope
     @Binds
     fun bindRemoteDataSource(
         impl: ExampleRemoteDataSourceImpl
