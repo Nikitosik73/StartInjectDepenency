@@ -4,6 +4,7 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import ru.paramonov.startinjectdepenency.example2.presentation.MainActivity
+import ru.paramonov.startinjectdepenency.example2.presentation.MainActivity2
 import javax.inject.Singleton
 
 @ApplicationScope
@@ -11,6 +12,8 @@ import javax.inject.Singleton
 interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
+
+    fun inject(activity: MainActivity2)
 
     @Component.Factory
     interface ApplicationComponentFactory {

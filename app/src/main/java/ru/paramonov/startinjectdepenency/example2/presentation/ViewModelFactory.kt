@@ -2,14 +2,16 @@ package ru.paramonov.startinjectdepenency.example2.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import ru.paramonov.startinjectdepenency.example2.domain.ExampleUseCase
+import ru.paramonov.startinjectdepenency.example2.di.ApplicationScope
 import javax.inject.Inject
+import javax.inject.Provider
 
+@ApplicationScope
 class ViewModelFactory @Inject constructor(
-    private val viewModels: @JvmSuppressWildcards Map<String, ViewModel>
-) : ViewModelProvider.Factory {
+    private val viewModelProviders: @JvmSuppressWildcards Map<String, Provider<ViewModel>>
+): ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return viewModels[modelClass.simpleName] as T
+        return viewModelProviders[modelClass.simpleName]?.get() as T
     }
 }
