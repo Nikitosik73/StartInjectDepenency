@@ -8,7 +8,7 @@ import ru.paramonov.startinjectdepenency.example2.presentation.MainActivity2
 import javax.inject.Singleton
 
 @ApplicationScope
-@Component(modules = [DataModule::class, DomainModule::class, ViewModelModule::class])
+@Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 
     fun activityComponentFactory(): ActivityComponent.ActivityFactory
